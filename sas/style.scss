@@ -1,0 +1,63 @@
+@import 'variabiles.scss';
+@import 'mixin.scss';
+@import 'utility.scss';
+@import 'reset.scss';
+@import 'typography.scss';
+
+body {
+  font-family: sans-serif;
+  background-color: $darkBg;
+  color: $semiLightTxt;
+  height: 100vh;
+  @include flex();
+}
+
+#app {
+  @include width-height(80vw, 40vw);
+  position: relative;
+  .fa-chevron-left,
+  .fa-chevron-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 7vw;
+    transition: 0.3s;
+    &:hover {
+      color: greenyellow;
+    }
+  }
+
+  .fa-chevron-right {
+    left: 103%;
+  }
+
+  .fa-chevron-left {
+    right: 103%;
+  }
+  .circle-wrap {
+    margin: 12px auto 0;
+    width: 45px;
+    @include flex(row, space-between, flex-start);
+    top: 105%;
+  }
+
+  .img-wrap {
+    @include width-height(100%, 100%);
+    overflow: hidden;
+  }
+}
+
+img {
+  position: relative;
+  width: 100%;
+}
+
+.circle {
+  @include width-height(8px, 8px);
+  border: 1px solid $semiLightTxt;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@import '_jsClasses.scss';
