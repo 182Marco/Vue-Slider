@@ -3,12 +3,15 @@ const app = new Vue({
   data: {
     imgs: ['img/lake.webp', 'img/ backlight.webp', 'img/sunset.webp'],
     i: 0,
+    intId: 0,
+    loopTime: 2000,
   },
-  createtd() {},
+  created() {
+    this.startLoop();
+  },
   methods: {
     next() {
       // this.i = 2 ? this.i = 0 : this.i++;
-      console.log(this.i);
       if (this.i == this.imgs.length - 1) {
         this.i = 0;
       } else {
@@ -21,6 +24,14 @@ const app = new Vue({
       } else {
         this.i--;
       }
+    },
+    startLoop() {
+      this.intId = setInterval(() => {
+        this.next();
+      }, this.loopTime);
+    },
+    stopLoop() {
+      clearInterval(this.intId);
     },
   },
 });
