@@ -39,6 +39,9 @@
           v-for="(img, index) in imgs"
           class="circle"
           :class="{active : index == i }"
+          @mouseenter="stopLoop()"
+          @mouseleave="startLoop()"
+          @click="i = index"
         ></div>
       </div>
     </div>
