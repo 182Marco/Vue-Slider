@@ -11,19 +11,10 @@ const app = new Vue({
   },
   methods: {
     next() {
-      // this.i = 2 ? this.i = 0 : this.i++;
-      if (this.i == this.imgs.length - 1) {
-        this.i = 0;
-      } else {
-        this.i++;
-      }
+      this.i == this.imgs.length - 1 ? (this.i = 0) : this.i++;
     },
     prev() {
-      if (this.i == 0) {
-        this.i = this.imgs.length - 1;
-      } else {
-        this.i--;
-      }
+      this.i == 0 ? (this.i = this.imgs.length - 1) : this.i--;
     },
     startLoop() {
       this.intId = setInterval(() => {
