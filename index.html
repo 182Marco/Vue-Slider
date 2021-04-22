@@ -18,7 +18,14 @@
     <title>Ducument</title>
   </head>
   <body>
-    <div id="app">
+    <div
+      id="app"
+      tabindex="0"
+      @mouseenter="stopLoop()"
+      ref="root"
+      @keyup.left="prev"
+      @keyup.right="next"
+    >
       <div @mouseenter="stopLoop()" @mouseleave="startLoop()" class="img-wrap">
         <img :src="imgs[i]" alt="lorem" />
       </div>

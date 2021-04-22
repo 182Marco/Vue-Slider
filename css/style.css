@@ -97,6 +97,10 @@ body {
   position: relative;
 }
 
+#app:focus {
+  outline: none;
+}
+
 #app .fa-chevron-left,
 #app .fa-chevron-right {
   position: absolute;

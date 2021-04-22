@@ -6,7 +6,7 @@ const app = new Vue({
     intId: 0,
     loopTime: 2000,
   },
-  created() {
+  mounted() {
     this.startLoop();
   },
   methods: {
@@ -17,12 +17,14 @@ const app = new Vue({
       this.i == 0 ? (this.i = this.imgs.length - 1) : this.i--;
     },
     startLoop() {
+      this.$refs.root.blur();
       this.intId = setInterval(() => {
         this.next();
       }, this.loopTime);
     },
     stopLoop() {
       clearInterval(this.intId);
+      this.$refs.root.focus();
     },
   },
 });
